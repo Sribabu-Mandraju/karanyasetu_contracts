@@ -1,0 +1,63 @@
+src/
+├── interfaces/
+│   ├── IDAOGovernance.sol
+│   ├── IDisasterRelief.sol
+        IDisasterReliefFactory.sol
+│   ├── IFundEscrow.sol
+│   └── INFTBadge.sol
+├── contracts/
+│   ├── DAOGovernance.sol
+│   ├── DisasterRelief.sol
+│   ├── DisasterReliefFactory.sol
+│   ├── FundEscrow.sol
+│   └── NFTBadge.sol
+├── libraries/
+│   └── ZKVerification.sol
+
+
+ 
+
+Notes:
+
+Have to set image uri for nfts using ipfs
+
+
+deployment requirements:
+
+1. DAOGovernance require 'admin address'
+        next admin have to set factory and escrow address
+
+
+mockusdc: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+
+DAOGovernance and DisasterReliefFactory should be deployed by the same admin
+
+
+
+MockUSDC: 0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9
+
+GeneralBadge: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+DonorBadge: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+
+
+
+
+Flow:
+
+1. Get usdc address 
+2. Deploy NFTS first and setAllowedContract(address disasterReliefFactory) for Disaster,setAllowedContract(Escrow) for general
+3 deploy Govenrnance contract  and setDisasterReliefFactory,setFundEscrow
+
+
+
+
+Note: 
+
+admin and operator must be different in daoGoernance
+
+
+GeneralDonorBadge address 0x2BB50DB53ab06FCEADd4718296D9d86Bd7459656
+  DisasterDonorBadge address 0xc66f35a77C8c12D237525F0c1D70F18F2262B144
+  DAOGovernance address 0x87c21BF9903Cc6352AA253d6FB7787b3DfDaA750
+  DisasterReliefFactory address 0x80A60d3DF309ea1c47Aa1d86443AA9B91Eb79Cea
+  FundEscrow address 0xC16687616C822f3531bD8d4215Ad9F3810f825D2
